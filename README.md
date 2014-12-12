@@ -1,7 +1,4 @@
-![](material.jpg)
-
-<small>Above: An image promoting Google's new "Material" design metaphor<br>
-Image Credit: Google</small>
+![](cover.png)
 
 # Material Design Color Palette
 
