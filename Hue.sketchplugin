@@ -10,18 +10,22 @@ var artboard = doc.currentPage().currentArtboard();
 var canvas   = artboard ? artboard : page;
 
 // Get color set
-var colorSet = createSelect('Choose a color set', colorSets, 0);
+var userChoice = createSelect('Choose a color set', hueSet, 0);
 
-if (colorSet[0] === 1000) {
-  var userColorSet = colorSet[1];
-  var materialColor = colorSets[userColorSet];
-  var materialColorSet = material[userColorSet];
+if (userChoice[0] === 1000) {
+  var userColorSet = userChoice[1];
+  var choiceColor = hueSet[userColorSet];
+  var materialColorSet = colorSets[userColorSet];
 
-  var swatchesGroup = canvas.addLayerOfType('group');
-  swatchesGroup.setName('Material ' + materialColor);
+  var swatchesGroup = canvas.addLayerOfType("group");
+  swatchesGroup.setName('Material ' + choiceColor);
+  swatchesGroup.frame().x = 0;
+  swatchesGroup.frame().y = 0;
+  swatchesGroup.frame().width = 200;
+  swatchesGroup.frame().height = materialColorSet.length * 46;
 
   // Execute
   materialColorSet.forEach(function(hexColor, i){
-    addSwatch(hexColor, i, materialColor)
+    addSwatch(hexColor[0], i, hexColor[1])
   });
 }
