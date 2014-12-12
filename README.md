@@ -1,8 +1,9 @@
-![](cover.png)
+![Material Design Color Palette](cover.png)
 
-# Material Design Color Palette
+> Sketch 3 plugin generate a palette of Google material design color for you.
 
-Sketch 3 plugin generate a palette of Google material design color for you.
+## Demo
+
 
 
 ## Shortcuts
