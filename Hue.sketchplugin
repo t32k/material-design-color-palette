@@ -1,8 +1,8 @@
 // (ctrl shift h)
 
 // Require library files
-#import 'lib/functions.js'
 #import 'lib/colors.js'
+#import 'lib/functions.js'
 
 // Get current canvas
 var page     = doc.currentPage();
@@ -22,10 +22,9 @@ if (userChoice[0] === 1000) {
   swatchesGroup.frame().x = 0;
   swatchesGroup.frame().y = 0;
   swatchesGroup.frame().width = 200;
-  swatchesGroup.frame().height = materialColorSet.length * 46;
+  swatchesGroup.frame().height = materialColorSet.length * 50;
 
-  // Execute
-  materialColorSet.forEach(function(hexColor, i){
-    addSwatch(hexColor[0], i, hexColor[1])
+  materialColorSet.forEach(function(colorSet, i){
+    addHuePalette(colorSet[0], i, colorSet[1]);
   });
 }

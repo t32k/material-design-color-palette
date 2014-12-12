@@ -1,1 +1,33 @@
 // (ctrl shift v)
+
+// Require library files
+#import 'lib/colors.js'
+#import 'lib/functions.js'
+
+// Get current canvas
+var page     = doc.currentPage();
+var artboard = doc.currentPage().currentArtboard();
+var canvas   = artboard ? artboard : page;
+
+// Get color set
+var userChoice = createSelect('Choose a color value', valueSet, 0);
+
+if (userChoice[0] === 1000) {
+  var userValueSet = userChoice[1];
+  var choiceValue = valueSet[userValueSet];
+
+  var userSets = colorSets.map(function(colorSet){
+    return colorSet[userValueSet];
+  });
+
+  var swatchesGroup = canvas.addLayerOfType("group");
+  swatchesGroup.setName('Material ' + choiceValue);
+  swatchesGroup.frame().x = 0;
+  swatchesGroup.frame().y = 0;
+  swatchesGroup.frame().width = userSets.length * 50;
+  swatchesGroup.frame().height = 50;
+
+  userSets.forEach(function(colorSet, i){
+    addValuePalette(colorSet[0], i, colorSet[1]);
+  });
+}
