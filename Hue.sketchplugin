@@ -5,9 +5,9 @@
 #import 'lib/functions.js'
 
 // Get current canvas
-var page     = doc.currentPage();
+var page = doc.currentPage();
 var artboard = doc.currentPage().currentArtboard();
-var canvas   = artboard ? artboard : page;
+var canvas = artboard ? artboard : page;
 
 // Get color set
 var userChoice = createSelect('Choose a color set', hueSet, 0);
@@ -17,14 +17,14 @@ if (userChoice[0] === 1000) {
   var choiceColor = hueSet[userColorSet];
   var materialColorSet = colorSets[userColorSet];
 
-  var swatchesGroup = canvas.addLayerOfType("group");
+  var swatchesGroup = canvas.addLayerOfType('group');
   swatchesGroup.setName('Material ' + choiceColor);
   swatchesGroup.frame().x = 0;
   swatchesGroup.frame().y = 0;
   swatchesGroup.frame().width = 200;
   swatchesGroup.frame().height = materialColorSet.length * 50;
 
-  materialColorSet.forEach(function(colorSet, i){
+  materialColorSet.forEach(function (colorSet, i) {
     addHuePalette(colorSet[0], i, colorSet[1]);
   });
 }
