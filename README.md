@@ -10,7 +10,9 @@
 + Swatch - __⌃⇧S__ ( Control + Shift + S )
 
 ## Installation
-Add Material Design Color Palette folder to the plugin folder `/Library/Application Support/com.bohemiancoding.sketch3` or `~/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application Support/com.bohemiancoding.sketch3/` or find it via menu option in Sketch 3 Plugins / __Reveal Plugins folder...__
+
++ Add Material Design Color Palette folder to the plugin folder `/Library/Application Support/com.bohemiancoding.sketch3` or `~/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application Support/com.bohemiancoding.sketch3/` or find it via menu option in Sketch 3 Plugins / __Reveal Plugins folder...__
++ Or you can find this plugin on [Sketch Toolbox.app](http://sketchtoolbox.com/), so you just search and download it.
 
 ## Resource
 + [Color - Style - Google design guidelines](http://www.google.com/design/spec/style/color.html#color-color-palette)
