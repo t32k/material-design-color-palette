@@ -19,8 +19,8 @@ if (userChoice[0] === 1000) {
 
   var swatchesGroup = canvas.addLayerOfType('group');
   swatchesGroup.setName('Material ' + choiceColor);
-  swatchesGroup.frame().x = 0;
-  swatchesGroup.frame().y = 0;
+  swatchesGroup.frame().x = 20;
+  swatchesGroup.frame().y = 20;
   swatchesGroup.frame().width = 200;
   swatchesGroup.frame().height = materialColorSet.length * 50;
 

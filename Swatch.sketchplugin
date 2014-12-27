@@ -24,11 +24,28 @@ if (userChoice1st[0] === 1000) {
 
     var swatchesGroup = canvas.addLayerOfType('group');
     swatchesGroup.setName(userPrimaryColor + ' x ' + userAccentColor);
-    swatchesGroup.frame().x = 0;
-    swatchesGroup.frame().y = 0;
+    swatchesGroup.frame().x = 20;
+    swatchesGroup.frame().y = 20;
     swatchesGroup.frame().width = 400;
-    swatchesGroup.frame().height = 400;
+    swatchesGroup.frame().height = 200;
 
-    addSwatch(userPrimaryColorSet, userAccentColorSet);
+    var userSets = [];
+    userSets.push(userPrimaryColorSet[7], userPrimaryColorSet[5], userPrimaryColorSet[1]);
+    if (userSets[1]  === 1) {
+      userSets.push(['#212121', 1]);
+    } else {
+      userSets.push(['#FFFFFF', 0]);
+    }
+    if (userAccentColorSet[11]) {
+      userSets.push(userAccentColorSet[11]);
+    } else {
+      userSets.push(userAccentColorSet[5]);
+    }
+    userSets.push(['#212121', 1], ['#727272', 1], ['#B6B6B6', 1]);
+
+    userSets.forEach(function (colorSet, i) {
+      addSwatch(colorSet[0], i, colorSet[1]);
+    });
+
   }
 }
