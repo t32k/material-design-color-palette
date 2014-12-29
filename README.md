@@ -5,9 +5,11 @@
 ![Demo](assets/demo.gif)
 
 ## Shortcuts
-+ Hue - __⌃⇧H__ ( Control + Shift + H )
-+ Value - __⌃⇧V__ ( Control + Shift + V )
-+ Swatch - __⌃⇧S__ ( Control + Shift + S )
+| Action | Key                         |
+|--------|-----------------------------|
+| Hue    | ⌃⇧H ( Control + Shift + H ) |
+| Value  | ⌃⇧V ( Control + Shift + V ) |
+| Swatch | ⌃⇧S ( Control + Shift + S ) |
 
 ## Installation
 
