@@ -17,12 +17,14 @@ if (userChoice[0] === 1000) {
   var choiceColor = hueSet[userColorSet];
   var materialColorSet = colorSets[userColorSet];
 
-  var swatchesGroup = canvas.addLayerOfType('group');
-  swatchesGroup.setName('Material ' + choiceColor);
-  swatchesGroup.frame().x = 20;
-  swatchesGroup.frame().y = 20;
-  swatchesGroup.frame().width = 200;
-  swatchesGroup.frame().height = materialColorSet.length * 50;
+  var swatchesGroup = createGroup({
+    parent: canvas,
+    name: 'Material ' + choiceColor,
+    x: 20,
+    y: 20,
+    width: 200,
+    height: materialColorSet.length * 50
+  });
 
   materialColorSet.forEach(function (colorSet, i) {
     addHuePalette(colorSet[0], i, colorSet[1]);

@@ -22,12 +22,14 @@ if (userChoice1st[0] === 1000) {
     var userAccentColor = hueSet[userAccentColorNum];
     var userAccentColorSet = colorSets[userAccentColorNum];
 
-    var swatchesGroup = canvas.addLayerOfType('group');
-    swatchesGroup.setName(userPrimaryColor + ' x ' + userAccentColor);
-    swatchesGroup.frame().x = 20;
-    swatchesGroup.frame().y = 20;
-    swatchesGroup.frame().width = 400;
-    swatchesGroup.frame().height = 200;
+    var swatchesGroup = createGroup({
+      parent: canvas,
+      name: userPrimaryColor + ' x ' + userAccentColor,
+      x: 20,
+      y: 20,
+      width: 400,
+      height: 200
+    });
 
     var userSets = [];
     userSets.push(userPrimaryColorSet[7], userPrimaryColorSet[5], userPrimaryColorSet[1]);
