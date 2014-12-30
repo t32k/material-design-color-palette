@@ -25,10 +25,8 @@ if (userChoice1st[0] === 1000) {
     var swatchesGroup = createGroup({
       parent: canvas,
       name: userPrimaryColor + ' x ' + userAccentColor,
-      x: 20,
-      y: 20,
-      width: 400,
-      height: 200
+      x: 20, y: 20,
+      width: 400, height: 200
     });
 
     var userSets = [];
