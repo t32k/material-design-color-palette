@@ -9,7 +9,6 @@ var page = doc.currentPage();
 var artboard = doc.currentPage().currentArtboard();
 var canvas = artboard ? artboard : page;
 
-
 var userChoice1st = createSelect('Select a primary color', hueSet, 0);
 if (userChoice1st[0] === 1000) {
   var userPrimaryColorNum = userChoice1st[1];
@@ -30,17 +29,21 @@ if (userChoice1st[0] === 1000) {
     });
 
     var userSets = [];
+    // Dark Primary Color, Primary Color, Light Primary Color
     userSets.push(userPrimaryColorSet[7], userPrimaryColorSet[5], userPrimaryColorSet[1]);
-    if (userSets[1]  === 1) {
-      userSets.push(['#212121', 1]);
-    } else {
+    // Text / Icons
+    if (userSets[1][1]  === 1) {
       userSets.push(['#FFFFFF', 0]);
+    } else {
+      userSets.push(['#212121', 1]);
     }
+    // Accent Color
     if (userAccentColorSet[11]) {
       userSets.push(userAccentColorSet[11]);
     } else {
       userSets.push(userAccentColorSet[5]);
     }
+    // Primary Text, Secondary Text, Divider Color
     userSets.push(['#212121', 1], ['#727272', 1], ['#B6B6B6', 1]);
 
     userSets.forEach(function (colorSet, i) {
