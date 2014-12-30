@@ -46,6 +46,5 @@ if (userChoice1st[0] === 1000) {
     userSets.forEach(function (colorSet, i) {
       addSwatch(colorSet[0], i, colorSet[1]);
     });
-
   }
 }
