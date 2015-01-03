@@ -10,11 +10,11 @@ var artboard = doc.currentPage().currentArtboard();
 var canvas = artboard ? artboard : page;
 
 // Get color set
-var userChoice = createSelect('Select a color value', valueSet, 0);
+var userChoice = createSelect('Select a color value', values, 0);
 
 if (userChoice[0] === 1000) {
   var userValueSet = userChoice[1];
-  var choiceValue = valueSet[userValueSet];
+  var choiceValue = values[userValueSet];
 
   var userSets = colorSets.map(function (colorSet) {
     return colorSet[userValueSet];

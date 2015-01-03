@@ -9,22 +9,34 @@ var page = doc.currentPage();
 var artboard = doc.currentPage().currentArtboard();
 var canvas = artboard ? artboard : page;
 
-// Get color set
-var userChoice = createSelect('Select a color set', hueSet, 0);
+// Get color info
+var choice = createSelect('Select a color set', colors, 0);
+var choiceCode = choice[0];
+var colorNumber = choice[1];
+var colorName = colors[colorNumber];
 
-if (userChoice[0] === 1000) {
-  var userColorSet = userChoice[1];
-  var choiceColor = hueSet[userColorSet];
-  var materialColorSet = colorSets[userColorSet];
+// Add color palette
+if (isSelected(choiceCode)) {
+  var userColorSets, swatchesGroups = [];
 
-  var swatchesGroup = createGroup({
-    parent: canvas,
-    name: 'Material ' + choiceColor,
-    x: 20, y: 20,
-    width: 200, height: materialColorSet.length * 50
-  });
+  if (colorName !== 'All Colors') {
+    colors[0] = colorName;
+    userColorSets = colorSets.filter(function (e, index) {
+      return index === colorNumber;
+    });
+  } else {
+    userColorSets = colorSets;
+  }
 
-  materialColorSet.forEach(function (colorSet, i) {
-    addHuePalette(colorSet[0], i, colorSet[1]);
+  userColorSets.forEach(function (colorSet, index) {
+    swatchesGroups[index] = createGroup({
+      parent: canvas,
+      name: 'Material ' + colors[index],
+      x: 220 * index, y: 0,
+      width: 200, height: colorSet.length * 50
+    });
+    colorSet.forEach(function (colorInfo, i) {
+      addHuePalette(index, colorInfo[0], colorInfo[1], i);
+    });
   });
 }

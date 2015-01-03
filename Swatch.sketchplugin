@@ -9,16 +9,16 @@ var page = doc.currentPage();
 var artboard = doc.currentPage().currentArtboard();
 var canvas = artboard ? artboard : page;
 
-var userChoice1st = createSelect('Select a primary color', hueSet, 0);
+var userChoice1st = createSelect('Select a primary color', colors, 0);
 if (userChoice1st[0] === 1000) {
   var userPrimaryColorNum = userChoice1st[1];
-  var userPrimaryColor = hueSet[userPrimaryColorNum];
+  var userPrimaryColor = colors[userPrimaryColorNum];
   var userPrimaryColorSet = colorSets[userPrimaryColorNum];
 
-  var userChoice2nd = createSelect('Select a accent color', hueSet, 0);
+  var userChoice2nd = createSelect('Select a accent color', colors, 0);
   if (userChoice2nd[0] === 1000) {
     var userAccentColorNum = userChoice2nd[1];
-    var userAccentColor = hueSet[userAccentColorNum];
+    var userAccentColor = colors[userAccentColorNum];
     var userAccentColorSet = colorSets[userAccentColorNum];
 
     var swatchesGroup = createGroup({
