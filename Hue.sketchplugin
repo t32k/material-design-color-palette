@@ -12,8 +12,8 @@ var canvas = artboard ? artboard : page;
 // Get color info
 var choice = createSelect('Select a color set', colors, 0);
 var choiceCode = choice[0];
-var colorNumber = choice[1];
-var colorName = colors[colorNumber];
+var colorIndex = choice[1];
+var colorName = colors[colorIndex];
 
 // Add color palette
 if (isSelected(choiceCode)) {
@@ -22,7 +22,7 @@ if (isSelected(choiceCode)) {
   if (colorName !== 'All Colors') {
     colors[0] = colorName;
     userColorSets = colorSets.filter(function (e, index) {
-      return index === colorNumber;
+      return index === colorIndex;
     });
   } else {
     userColorSets = colorSets;

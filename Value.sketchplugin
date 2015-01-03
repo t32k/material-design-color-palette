@@ -9,25 +9,43 @@ var page = doc.currentPage();
 var artboard = doc.currentPage().currentArtboard();
 var canvas = artboard ? artboard : page;
 
-// Get color set
-var userChoice = createSelect('Select a color value', values, 0);
+// Get value info
+var choice = createSelect('Select a color value', values, 0);
+var choiceCode = choice[0];
+var valueIndex = choice[1];
+var valueName = values[valueIndex];
 
-if (userChoice[0] === 1000) {
-  var userValueSet = userChoice[1];
-  var choiceValue = values[userValueSet];
+if (isSelected(choiceCode)) {
+  var userValueSets = [];
+  var swatchesGroups = [];
 
-  var userSets = colorSets.map(function (colorSet) {
-    return colorSet[userValueSet];
-  });
+  if (valueName !== 'All Values') {
+    values[0] = valueName;
+    userValueSets.push(colorSets.map(function (colorSet) {
+      return colorSet[valueIndex];
+    }).filter(function (e) {
+      return e;
+    }));
+  } else {
+    var allValues = 14;
+    for (var i = 0; i < allValues; i++) {
+      userValueSets.push(colorSets.map(function (colorSet) {
+        return colorSet[i];
+      }).filter(function (e) {
+        return e;
+      }));
+    }
+  }
 
-  var swatchesGroup = createGroup({
-    parent: canvas,
-    name: 'Material ' + choiceValue,
-    x: 20, y: 20,
-    width: userSets.length * 50, height: 50
-  });
-
-  userSets.forEach(function (colorSet, i) {
-    addValuePalette(colorSet[0], i, colorSet[1]);
+  userValueSets.forEach(function (valueSet, index) {
+    swatchesGroups[index] = createGroup({
+      parent: canvas,
+      name: 'Material ' + values[index],
+      x: 0, y: 60 * index,
+      width: valueSet.length * 50, height: 50
+    });
+    valueSet.forEach(function (colorInfo, i) {
+      addValuePalette(index, colorInfo[0], colorInfo[1], i);
+    });
   });
 }
