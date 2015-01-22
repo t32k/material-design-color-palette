@@ -1,7 +1,7 @@
 // (ctrl shift s)
 
 // Require library files
-#import 'lib/colors.js'
+#import 'lib/COLORS.js'
 #import 'lib/functions.js'
 
 // Get current canvas
@@ -9,17 +9,17 @@ var page = doc.currentPage();
 var artboard = doc.currentPage().currentArtboard();
 var canvas = artboard ? artboard : page;
 
-var userChoice1st = createSelect('Select a primary color', colors, 0);
+var userChoice1st = createSelect('Select a primary color', COLORS, 0);
 if (userChoice1st[0] === 1000) {
   var userPrimaryColorNum = userChoice1st[1];
-  var userPrimaryColor = colors[userPrimaryColorNum];
-  var userPrimaryColorSet = colorSets[userPrimaryColorNum];
+  var userPrimaryColor = COLORS[userPrimaryColorNum];
+  var userPrimaryColorSet = COLOR_SETS[userPrimaryColorNum];
 
-  var userChoice2nd = createSelect('Select a accent color', colors, 0);
+  var userChoice2nd = createSelect('Select a accent color', COLORS, 0);
   if (userChoice2nd[0] === 1000) {
     var userAccentColorNum = userChoice2nd[1];
-    var userAccentColor = colors[userAccentColorNum];
-    var userAccentColorSet = colorSets[userAccentColorNum];
+    var userAccentColor = COLORS[userAccentColorNum];
+    var userAccentColorSet = COLOR_SETS[userAccentColorNum];
 
     var swatchesGroup = createGroup({
       parent: canvas,

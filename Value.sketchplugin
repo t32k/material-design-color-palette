@@ -1,7 +1,7 @@
 // (ctrl shift v)
 
 // Require library files
-#import 'lib/colors.js'
+#import 'lib/COLORS.js'
 #import 'lib/functions.js'
 
 // Get current canvas
@@ -10,18 +10,18 @@ var artboard = doc.currentPage().currentArtboard();
 var canvas = artboard ? artboard : page;
 
 // Get value info
-var choice = createSelect('Select a color value', values, 0);
+var choice = createSelect('Select a color value', VALUES, 0);
 var choiceCode = choice[0];
 var valueIndex = choice[1];
-var valueName = values[valueIndex];
+var valueName = VALUES[valueIndex];
 
 if (isSelected(choiceCode)) {
   var userValueSets = [];
   var swatchesGroups = [];
 
   if (valueName !== 'All Values') {
-    values[0] = valueName;
-    userValueSets.push(colorSets.map(function (colorSet) {
+    VALUES[0] = valueName;
+    userValueSets.push(COLOR_SETS.map(function (colorSet) {
       return colorSet[valueIndex];
     }).filter(function (e) {
       return e;
@@ -29,7 +29,7 @@ if (isSelected(choiceCode)) {
   } else {
     var allValues = 14;
     for (var i = 0; i < allValues; i++) {
-      userValueSets.push(colorSets.map(function (colorSet) {
+      userValueSets.push(COLOR_SETS.map(function (colorSet) {
         return colorSet[i];
       }).filter(function (e) {
         return e;
@@ -40,7 +40,7 @@ if (isSelected(choiceCode)) {
   userValueSets.forEach(function (valueSet, index) {
     swatchesGroups[index] = createGroup({
       parent: canvas,
-      name: 'Material ' + values[index],
+      name: 'Material ' + VALUES[index],
       x: 0, y: 60 * index,
       width: valueSet.length * 50, height: 50
     });
