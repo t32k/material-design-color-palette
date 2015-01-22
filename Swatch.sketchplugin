@@ -1,7 +1,7 @@
 // (ctrl shift s)
 
 // Require library files
-#import 'lib/COLORS.js'
+#import 'lib/colors.js'
 #import 'lib/functions.js'
 
 // Get current canvas
@@ -9,44 +9,52 @@ var page = doc.currentPage();
 var artboard = doc.currentPage().currentArtboard();
 var canvas = artboard ? artboard : page;
 
-var userChoice1st = createSelect('Select a primary color', COLORS, 0);
-if (userChoice1st[0] === 1000) {
-  var userPrimaryColorNum = userChoice1st[1];
-  var userPrimaryColor = COLORS[userPrimaryColorNum];
-  var userPrimaryColorSet = COLOR_SETS[userPrimaryColorNum];
+// Delete 'All Colors'
+COLORS.pop();
 
-  var userChoice2nd = createSelect('Select a accent color', COLORS, 0);
-  if (userChoice2nd[0] === 1000) {
-    var userAccentColorNum = userChoice2nd[1];
-    var userAccentColor = COLORS[userAccentColorNum];
-    var userAccentColorSet = COLOR_SETS[userAccentColorNum];
+var choice = createSelect('Select a primary color', COLORS, 0);
+var choiceCode = choice[0];
+var colorIndex = choice[1];
+
+if (isSelected(choiceCode)) {
+  var primaryColorName = COLORS[colorIndex];
+  var primaryColorSet = COLOR_SETS[colorIndex];
+
+  var secondChoice = createSelect('Select an accent color', COLORS, 0);
+  var secondChoiceCode = secondChoice[0];
+  var secondColorIndex = secondChoice[1];
+
+  if (isSelected(secondChoiceCode)) {
+    var accentColorName = COLORS[secondColorIndex];
+    var accentColorSet = COLOR_SETS[secondColorIndex];
 
     var swatchesGroup = createGroup({
       parent: canvas,
-      name: userPrimaryColor + ' x ' + userAccentColor,
+      name: primaryColorName + ' x ' + accentColorName,
       x: 0, y: 0,
       width: 400, height: 200
     });
 
-    var userSets = [];
+    var swatches = [];
+
     // Dark Primary Color, Primary Color, Light Primary Color
-    userSets.push(userPrimaryColorSet[7], userPrimaryColorSet[5], userPrimaryColorSet[1]);
+    swatches.push(primaryColorSet[7], primaryColorSet[5], primaryColorSet[1]);
     // Text / Icons
-    if (userSets[1][1]  === 1) {
-      userSets.push(['#FFFFFF', 0]);
+    if (swatches[1][1]  === 1) {
+      swatches.push(['#FFFFFF', 0]);
     } else {
-      userSets.push(['#212121', 1]);
+      swatches.push(['#212121', 1]);
     }
     // Accent Color
-    if (userAccentColorSet[11]) {
-      userSets.push(userAccentColorSet[11]);
+    if (accentColorSet[11]) {
+      swatches.push(accentColorSet[11]);
     } else {
-      userSets.push(userAccentColorSet[5]);
+      swatches.push(accentColorSet[5]);
     }
     // Primary Text, Secondary Text, Divider Color
-    userSets.push(['#212121', 1], ['#727272', 1], ['#B6B6B6', 1]);
+    swatches.push(['#212121', 1], ['#727272', 1], ['#B6B6B6', 1]);
 
-    userSets.forEach(function (colorSet, i) {
+    swatches.forEach(function (colorSet, i) {
       addSwatch(colorSet[0], i, colorSet[1]);
     });
   }

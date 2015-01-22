@@ -1,7 +1,7 @@
 // (ctrl shift h)
 
 // Require library files
-#import 'lib/COLORS.js'
+#import 'lib/colors.js'
 #import 'lib/functions.js'
 
 // Get current canvas
@@ -17,7 +17,8 @@ var colorName = COLORS[colorIndex];
 
 // Add color palette
 if (isSelected(choiceCode)) {
-  var userColorSets, swatchesGroups = [];
+  var userColorSets = [];
+  var swatchesGroups = [];
 
   if (colorName !== 'All Colors') {
     COLORS[0] = colorName;

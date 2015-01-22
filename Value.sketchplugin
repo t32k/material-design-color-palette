@@ -1,7 +1,7 @@
 // (ctrl shift v)
 
 // Require library files
-#import 'lib/COLORS.js'
+#import 'lib/colors.js'
 #import 'lib/functions.js'
 
 // Get current canvas
