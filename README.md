@@ -1,5 +1,5 @@
 ![Material Design Color Palette](assets/cover.png)
-> Sketch 3 plugin generate a palette of Google material design color for you.
+> Sketch 3 plugin generate a palette of Google Material Design color for you.
 
 ## Demo
 ![Demo](assets/demo.gif)
