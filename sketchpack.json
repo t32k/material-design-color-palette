@@ -1,6 +1,6 @@
 {
   "name": "Material Design Color Palette",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Sketch app plugin for displaying Google material design color palette.",
   "tags": ["google", "material", "design", "color", "android"]
 }
