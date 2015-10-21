@@ -1,0 +1,40 @@
+{
+  "author": "Koji Ishimoto",
+  "menu": {
+    "isRoot": false,
+    "shortcut": "",
+    "items": [
+      "hue",
+      "value",
+      "swatch"
+    ],
+    "title": "Material Design Color Palette"
+  },
+  "identifier": "me.t32k.material-design-color-palette",
+  "version": "3.0.0",
+  "description": "Sketch app plugin for displaying Google material design color palette.",
+  "name": "Material Design Color Palette",
+  "commands": [
+    {
+      "name": "Hue",
+      "identifier": "hue",
+      "handler": "onRun",
+      "shortcut": "ctrl shift h",
+      "script": "hue.js"
+    },
+    {
+      "name": "Value",
+      "identifier": "value",
+      "handler": "onRun",
+      "shortcut": "ctrl shift v",
+      "script": "value.js"
+    },
+    {
+      "name": "Swatch",
+      "identifier": "swatch",
+      "handler": "onRun",
+      "shortcut": "ctrl shift s",
+      "script": "swatch.js"
+    }
+  ]
+}
