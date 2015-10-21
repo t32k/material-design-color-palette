@@ -1,8 +1,8 @@
 // (ctrl shift v)
 
 // Require library files
-#import 'lib/colors.js'
-#import 'lib/functions.js'
+@import 'lib/colors.js'
+@import 'lib/functions.js'
 
 // Get current canvas
 var page = doc.currentPage();
