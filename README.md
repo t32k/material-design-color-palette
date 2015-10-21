@@ -1,11 +1,11 @@
-![Material Design Color Palette](material-design-color-palette/Contents/Resources/cover.png)
+![Material Design Color Palette](material-design-color-palette.sketchplugin/Contents/Resources/cover.png)
 
 > Sketch 3 plugin generate a palette of Google Material Design color for you.
 
 
 ## Demo
 
-![Demo](material-design-color-palette/Contents/Resources/demo.gif)
+![Demo](material-design-color-palette.sketchplugin/Contents/Resources/demo.gif)
 
 
 ## Shortcuts
@@ -19,7 +19,7 @@
 
 ## Installation
 
-![Sketch Toolbox.app](material-design-color-palette/Contents/Resources/sketchtoolbox.png)
+![Sketch Toolbox.app](material-design-color-palette.sketchplugin/Contents/Resources/sketchtoolbox.png)
 
 You can find this plugin on [Sketch Toolbox.app](http://sketchtoolbox.com/), so you just search and download it.
 
