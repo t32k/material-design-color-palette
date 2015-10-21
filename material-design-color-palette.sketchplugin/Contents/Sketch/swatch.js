@@ -1,10 +1,8 @@
-// (ctrl shift s)
-
-// Require library files
-@import 'lib/colors.js'
-@import 'lib/functions.js'
-
 var onRun = function(context) {
+    // Require library files
+    @import 'lib/colors.js'
+    @import 'lib/functions.js'
+
     var doc = context.document;
 
     // Get current canvas

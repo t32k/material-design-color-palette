@@ -1,8 +1,8 @@
-// Require library files
-@import 'lib/colors.js'
-@import 'lib/functions.js'
-
 var onRun = function (context) {
+    // Require library files
+    @import 'lib/colors.js'
+    @import 'lib/functions.js'
+
     var doc = context.document;
 
     // Get current canvas
@@ -20,7 +20,6 @@ var onRun = function (context) {
     if (isSelected(choiceCode)) {
         var userColorSets = [];
         var swatchesGroups = [];
-        log(swatchesGroups);
 
         if (colorName !== 'All Colors') {
             COLORS[0] = colorName;

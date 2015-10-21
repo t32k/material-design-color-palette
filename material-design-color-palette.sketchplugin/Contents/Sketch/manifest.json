@@ -12,6 +12,7 @@
   },
   "identifier": "me.t32k.material-design-color-palette",
   "version": "3.0.0",
+  "compatibleVersion": 3,
   "description": "Sketch app plugin for displaying Google material design color palette.",
   "name": "Material Design Color Palette",
   "commands": [
