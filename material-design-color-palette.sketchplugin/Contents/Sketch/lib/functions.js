@@ -15,7 +15,7 @@ function addHuePalette(groupIndex, hexColor, isWhite, valueIndex) {
     x: 0, y: 0,
     width: 200, height: 50
   });
-  var colorBlockFill = colorBlock.style().fills().addNewStylePart();
+  var colorBlockFill = colorBlock.style().addStylePartOfType(0);
   colorBlockFill.color = MSColor.colorWithSVGString(hexColor);
 
   var textColor = (isWhite === 1) ? '#FFF' : '#222';
@@ -55,7 +55,7 @@ function addValuePalette(groupIndex, hexColor, isWhite, colorIndex) {
     x: 0, y: 0,
     width: 50, height: 50
   });
-  var colorBlockFill = colorBlock.style().fills().addNewStylePart();
+  var colorBlockFill = colorBlock.style().addStylePartOfType(0);
   colorBlockFill.color = MSColor.colorWithSVGString(hexColor);
 
   var textColor = (isWhite === 1) ? '#FFF' : '#222';
@@ -103,7 +103,7 @@ function addSwatch(hexColor, index, isWhite) {
     x: 0, y: 0,
     width: 100, height: 100
   });
-  var colorBlockFill = colorBlock.style().fills().addNewStylePart();
+  var colorBlockFill = colorBlock.style().addStylePartOfType(0);
   colorBlockFill.color = MSColor.colorWithSVGString(hexColor);
 
   var textColor = (isWhite === 1) ? '#FFF' : '#222';
