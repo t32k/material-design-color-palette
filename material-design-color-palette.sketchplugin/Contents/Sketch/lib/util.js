@@ -17,7 +17,8 @@ function createSelect(msg, items, selectedItemIndex) {
 }
 
 function createGroup(config) {
-  var group = config.parent.addLayerOfType('group');
+  var group = MSLayerGroup.new()
+  config.parent.addLayers([group]);
   group.setName(config.name);
   group.frame().x = config.x;
   group.frame().y = config.y;
@@ -27,20 +28,21 @@ function createGroup(config) {
 }
 
 function createRectangle(config) {
-  var rectangle = config.parent.addLayerOfType('rectangle');
-  if (rectangle.embedInShapeGroup != undefined) {
-    rectangle = rectangle.embedInShapeGroup();
-  } 
+  var rectangle = MSRectangleShape.new();
   rectangle.setName(config.name);
   rectangle.frame().x = config.x;
   rectangle.frame().y = config.y;
   rectangle.frame().width = config.width;
   rectangle.frame().height = config.height;
-  return rectangle;
+  
+  var shape = MSShapeGroup.shapeWithPath( rectangle );
+  config.parent.addLayers([shape]);
+  return shape;
 }
 
 function createText(config) {
-  var text = config.parent.addLayerOfType('text');
+  var text = MSTextLayer.new();
+  config.parent.addLayers([text]);
   text.name = config.name;
   text.stringValue = config.stringValue;
   text.fontPostscriptName = config.fontPostscriptName ;
