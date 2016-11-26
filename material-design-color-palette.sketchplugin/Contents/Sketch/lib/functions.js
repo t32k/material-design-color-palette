@@ -16,7 +16,7 @@ function addHuePalette(groupIndex, hexColor, isWhite, valueIndex) {
     width: 200, height: 50
   });
   var colorBlockFill = colorBlock.style().addStylePartOfType(0);
-  colorBlockFill.color = MSColor.colorWithSVGString(hexColor);
+  colorBlockFill.color = MSImmutableColor.colorWithSVGString(hexColor).newMutableCounterpart();
 
   var textColor = (isWhite === 1) ? '#FFF' : '#222';
 
@@ -26,7 +26,7 @@ function addHuePalette(groupIndex, hexColor, isWhite, valueIndex) {
     name: VALUES[valueIndex],
     fontPostscriptName: 'Helvetica Neue Medium',
     fontSize: 14,
-    textColor: MSColor.colorWithSVGString(textColor),
+    textColor: MSImmutableColor.colorWithSVGString(textColor).newMutableCounterpart(),
     x: 10, y: 17
   });
   var colorText = createText({
@@ -35,7 +35,7 @@ function addHuePalette(groupIndex, hexColor, isWhite, valueIndex) {
     name: hexColor,
     fontPostscriptName: 'Helvetica Neue',
     fontSize: 14,
-    textColor: MSColor.colorWithSVGString(textColor),
+    textColor: MSImmutableColor.colorWithSVGString(textColor).newMutableCounterpart(),
     x: 130, y: 17
   });
 }
@@ -56,7 +56,7 @@ function addValuePalette(groupIndex, hexColor, isWhite, colorIndex) {
     width: 50, height: 50
   });
   var colorBlockFill = colorBlock.style().addStylePartOfType(0);
-  colorBlockFill.color = MSColor.colorWithSVGString(hexColor);
+  colorBlockFill.color = MSImmutableColor.colorWithSVGString(hexColor).newMutableCounterpart();
 
   var textColor = (isWhite === 1) ? '#FFF' : '#222';
 
@@ -66,7 +66,7 @@ function addValuePalette(groupIndex, hexColor, isWhite, colorIndex) {
     name: COLORS[colorIndex],
     fontPostscriptName: 'Helvetica Neue Medium',
     fontSize: 8,
-    textColor: MSColor.colorWithSVGString(textColor),
+    textColor: MSImmutableColor.colorWithSVGString(textColor).newMutableCounterpart(),
     x: 8, y: 14
   });
   var colorText = createText({
@@ -75,7 +75,7 @@ function addValuePalette(groupIndex, hexColor, isWhite, colorIndex) {
     name: hexColor,
     fontPostscriptName: 'Helvetica Neue',
     fontSize: 8,
-    textColor: MSColor.colorWithSVGString(textColor),
+    textColor: MSImmutableColor.colorWithSVGString(textColor).newMutableCounterpart(),
     x: 8, y: 26
   });
 }
@@ -104,7 +104,7 @@ function addSwatch(hexColor, index, isWhite) {
     width: 100, height: 100
   });
   var colorBlockFill = colorBlock.style().addStylePartOfType(0);
-  colorBlockFill.color = MSColor.colorWithSVGString(hexColor);
+  colorBlockFill.color = MSImmutableColor.colorWithSVGString(hexColor).newMutableCounterpart();
 
   var textColor = (isWhite === 1) ? '#FFF' : '#222';
 
@@ -114,7 +114,7 @@ function addSwatch(hexColor, index, isWhite) {
     name: SWATCH_COLORS[index],
     fontPostscriptName: 'Helvetica Neue',
     fontSize: 9,
-    textColor: MSColor.colorWithSVGString(textColor),
+    textColor: MSImmutableColor.colorWithSVGString(textColor).newMutableCounterpart(),
     x: 8, y: 14
   });
   var colorText = createText({
@@ -123,7 +123,7 @@ function addSwatch(hexColor, index, isWhite) {
     name: hexColor,
     fontPostscriptName: 'Helvetica Neue Medium',
     fontSize: 14,
-    textColor: MSColor.colorWithSVGString(textColor),
+    textColor: MSImmutableColor.colorWithSVGString(textColor).newMutableCounterpart(),
     x: 8, y: 26
   });
 }
