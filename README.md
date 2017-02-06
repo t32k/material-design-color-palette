@@ -12,9 +12,9 @@
 
 | Action | Key                         |
 |--------|-----------------------------|
-| Hue    | <kbd>Ctrl + Shift + H</kbd> |
-| Value  | <kbd>Ctrl + Shift + V</kbd> |
-| Swatch | <kbd>Ctrl + Shift + S</kbd>　　|
+| Hue    | <kbd>Ctrl+Shift+H</kbd> |
+| Value  | <kbd>Ctrl+Shift+V</kbd> |
+| Swatch | <kbd>Ctrl+Shift+S</kbd>　　|
 
 
 ## Installation
