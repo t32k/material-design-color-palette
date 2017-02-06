@@ -1,7 +1,6 @@
 ![Material Design Color Palette](http://i.imgur.com/bXF7WZa.png)
 
-> Sketch 3 plugin generate a palette of Google Material Design color for you.
-
+> Sketch app plugin for displaying Google Material Design color palette.
 
 ## Demo
 
