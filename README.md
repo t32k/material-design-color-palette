@@ -1,6 +1,6 @@
 ![Material Design Color Palette](http://i.imgur.com/bXF7WZa.png)
 
-> Sketch app plugin for displaying Google Material Design color palette.
+> Sketch app plugin for displaying 2014 Material Design color palettes.
 
 ## Demo
 
