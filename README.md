@@ -27,4 +27,6 @@ Or add Material Design Color Palette folder to the plugin folder `/Library/Appli
 
 ## Resource
 
-+ [Color - Style - Google design guidelines](http://www.google.com/design/spec/style/color.html#color-color-palette)
++ [2014 Material Design color palettes](https://material.io/design/color/#tools-for-picking-colors)
+
+> These color palettes, originally created by Material Design in 2014, comprises of colors designed to work together harmoniously, and can be used to develop your brand palette. To generate your own harmonious palettes, use either the palette generation tool or Material Theme Editor.
